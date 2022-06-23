@@ -59,9 +59,7 @@
     "mongodb": "^4.5.0"
   },
   "lint-staged": {
-    "*.ts": [
-      "prettier --write"
-    ]
+    "**/*.{ts,json}": []
   },
   "repository": {
     "type": "git",
