@@ -46,7 +46,7 @@ or
 - [Table of Contents](#table-of-contents)
 - [Usage](#usage)
   - [MongoDbDriverModule](#mongodbdrivermodule)
-  - [MultiConnectionsDatabae](#multi-connections-database)
+  - [MultiConnectionsDatabase](#multi-connections-database)
   - [ExampleOfUse](#example-of-use)
 
 ## Usage
