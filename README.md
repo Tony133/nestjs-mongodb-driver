@@ -28,16 +28,21 @@ MongoDB Native Driver module for Nest framework (node.js) 😻
 
 ## Installation
 
-First install the module via `yarn` or `npm` and do not forget to install the driver package as well:
+First install the module via `yarn` or `npm` or `pnpm` and do not forget to install the driver package as well:
 
 
 ```bash
-    $ npm i --save nest-mongodb-driver  mongodb
+    $ npm i --save nest-mongodb-driver mongodb
 ```
 or
 
 ```bash
-    $ yarn add nest-mongodb-driver  mongodb
+    $ yarn add nest-mongodb-driver mongodb
+```
+or
+
+```bash
+    $ pnpm add nest-mongodb-driver mongodb
 ```
 
 ## Table of Contents
