@@ -5,7 +5,7 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { InjectClient } from '../../../../lib';
+import { InjectClient } from '../../../../../../lib';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Db, ObjectId } from 'mongodb';
@@ -14,11 +14,11 @@ import { Db, ObjectId } from 'mongodb';
 export class UsersService {
   constructor(@InjectClient() private readonly db: Db) {}
 
-  public async findAll(): Promise<any> {
+  public async findAll(): Promise<unknown> {
     return await this.db.collection('users').find().toArray();
   }
 
-  public async findOne(id: string): Promise<any> {
+  public async findOne(id: string): Promise<unknown> {
     if (!ObjectId.isValid(id)) {
       throw new BadRequestException();
     }
@@ -34,7 +34,7 @@ export class UsersService {
     return result;
   }
 
-  public async create(createUserDto: CreateUserDto): Promise<any> {
+  public async create(createUserDto: CreateUserDto): Promise<unknown> {
     try {
       return await this.db.collection('users').insertOne(createUserDto);
     } catch (err) {
@@ -42,7 +42,10 @@ export class UsersService {
     }
   }
 
-  public async update(id: string, updateUserDto: UpdateUserDto): Promise<any> {
+  public async update(
+    id: string,
+    updateUserDto: UpdateUserDto,
+  ): Promise<unknown> {
     if (!ObjectId.isValid(id)) {
       throw new BadRequestException();
     }

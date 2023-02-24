@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MongoDbDriverModule } from '../../../lib';
+import { MongoDbDriverModule } from '../../../../../lib';
 import { UsersModule } from './users/users.module';
 
 @Module({
