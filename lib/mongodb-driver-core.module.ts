@@ -27,7 +27,7 @@ export class MongoDbDriverCoreModule implements OnApplicationShutdown {
     private readonly moduleRef: ModuleRef,
   ) {}
 
-  static forRoot(
+  public static forRoot(
     options: MongoDbDriverModuleOptions,
     connection?: string,
   ): DynamicModule {
