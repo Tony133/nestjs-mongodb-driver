@@ -92,12 +92,15 @@ UsersService:
 import { Injectable } from '@nestjs/common';
 import { Db, ObjectId } from 'mongodb';
 import { InjectClient } from 'nest-mongodb-driver';
+import type {
+  Document,
+} from 'mongodb';
 
 @Injectable()
 export class UsersService {
   constructor(@InjectClient() private readonly db: Db) {}
 
-  async findAll() {
+  async findAll(): Promise<Document[]> {
     return await this.db.collection('users').find().toArray();
   }
 }
@@ -108,13 +111,16 @@ UsersController:
 ```typescript
 import { Controller, Get } from '@nestjs/common';
 import { UsersService } from './users.service';
+import type {
+  Document,
+} from 'mongodb';
 
 @Controller()
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  async getAllUsers() {
+  async getAllUsers(): Promise<Document[]> {
     return await this.usersService.findAll();
   }
 }
@@ -160,11 +166,11 @@ export class PostService {
     private dbConnection: Db,
   ) {}
 
-  public async findAll(): Promise<any> {
+  public async findAll(): Promise<Document[]> {
     return await this.dbConnection.collection('posts').find().toArray();
   }
 
-  public async create(createPostDto: CreatePostDto): Promise<any> {
+  public async create(createPostDto: CreatePostDto): Promise<InsertOneResult<Document>> {
     try {
       return await this.dbConnection
         .collection('posts')
@@ -185,11 +191,11 @@ export class UsersService {
     private dbConnection: Db,
   ) {}
 
-  public async findAll(): Promise<any> {
+  public async findAll(): Promise<Document[]> {
     return await this.dbConnection.collection('users').find().toArray();
   }
 
-  public async create(createUserDto: CreateUserDto): Promise<any> {
+  public async create(createUserDto: CreateUserDto): Promise<InsertOneResult<Document>> {
     try {
       return await this.dbConnection
         .collection('users')
