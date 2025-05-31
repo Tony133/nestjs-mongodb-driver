@@ -1,6 +1,6 @@
 {
   "name": "nest-mongodb-driver",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "MongoDB Node Driver module for Nest framework (node.js) 😻",
   "author": "Tony133",
   "license": "MIT",
@@ -65,6 +65,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tony133/nestjs-mongodb-driver"
+    "url": "git+https://github.com/tony133/nestjs-mongodb-driver.git"
   }
 }
