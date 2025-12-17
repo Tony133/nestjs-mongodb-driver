@@ -1,6 +1,6 @@
 {
   "name": "nest-mongodb-driver",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "MongoDB Node Driver module for Nest framework (node.js) 😻",
   "author": "Tony133",
   "license": "MIT",
